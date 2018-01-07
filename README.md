@@ -1,2 +1,3 @@
 # kotlin-multiplatform-demo
-Demo for Kotlin features & multiplatform projects  
+* Demo for Kotlin multiplatform projects
+* Brief Kotlin features overview
