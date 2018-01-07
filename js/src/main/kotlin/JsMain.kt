@@ -8,4 +8,5 @@ fun main(args: Array<String>) {
     println(commonFunction())
     println(multiPlatformFunction())
     println(CommonClass("Mark").toString())
+    TODO("Brief Kotlin/JS Features overview")
 }
