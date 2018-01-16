@@ -14,10 +14,13 @@ apply plugin: 'kotlin-platform-js'
 
 repositories {
     mavenCentral()
+    maven {
+        url  "http://dl.bintray.com/kotlin/kotlinx.html/"
+    }
 }
 
 dependencies {
-//    expectedBy project(':common')
+    compile 'org.jetbrains.kotlinx:kotlinx-html-js:0.6.8'
     compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
     expectedBy project(":")
     testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
