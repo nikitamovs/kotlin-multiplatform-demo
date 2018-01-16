@@ -23,14 +23,13 @@ external fun alert(message: Any?)
 
 fun startGui() {
     //usage of external libraries & external functions
-    jq("#alert_button").click { _ ->
+    jq("#alert_button").click {
         alert("This is the expected alert function")
     }
     //usage of standard JS
-    document.getElementById("dynamic_button")!!.addEventListener("click", { event ->
+    document.getElementById("dynamic_button")!!.addEventListener("click", { _ ->
         testDynamicType()
     })
-
     val intervalId = window.setInterval({
         val myDiv = document.create.div("panel") {
             p {
@@ -39,16 +38,13 @@ fun startGui() {
             }
         }
         document.getElementById("container")!!.appendChild(myDiv)
-        document.getElementById("container")!!.append(document.create.div {
-            +"added"
-        })
     }, 1000)
     window.setTimeout({ window.clearInterval(intervalId) }, 6000)
 }
 
 //dynamic type
 fun testDynamicType() {
-    val obj: dynamic = JSON.parse("{\"name\": \"JSMark\", \"age\": 400}")
+    val obj: dynamic = JSON.parse("{\"name\": \"JSMark\", \"age\": 40}")
     println(obj.name)
 }
 
