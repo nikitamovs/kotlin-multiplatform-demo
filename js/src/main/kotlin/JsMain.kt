@@ -1,11 +1,11 @@
 import common.*
+import jquery.jq
 import kotlinx.html.a
 import kotlinx.html.div
 import kotlinx.html.dom.create
 import kotlinx.html.p
 import kotlin.browser.document
 import kotlin.browser.window
-import kotlin.js.Json
 
 
 fun main(args: Array<String>) {
@@ -22,9 +22,11 @@ fun main(args: Array<String>) {
 external fun alert(message: Any?)
 
 fun startGui() {
-    document.getElementById("alert_button")!!.addEventListener("click", { event ->
+    //usage of external libraries & external functions
+    jq("#alert_button").click { _ ->
         alert("This is the expected alert function")
-    })
+    }
+    //usage of standard JS
     document.getElementById("dynamic_button")!!.addEventListener("click", { event ->
         testDynamicType()
     })
@@ -41,10 +43,11 @@ fun startGui() {
             +"added"
         })
     }, 1000)
-    window.setTimeout({window.clearInterval(intervalId)},6000 )
+    window.setTimeout({ window.clearInterval(intervalId) }, 6000)
 }
 
-fun testDynamicType(){
+//dynamic type
+fun testDynamicType() {
     val obj: dynamic = JSON.parse("{\"name\": \"JSMark\", \"age\": 400}")
     println(obj.name)
 }

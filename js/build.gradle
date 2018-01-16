@@ -39,7 +39,6 @@ task assembleWeb(type: Sync) {
     }
     from compileKotlin2Js.destinationDir
     into "${projectDir}/build/libs"
-
     dependsOn classes
 }
 
