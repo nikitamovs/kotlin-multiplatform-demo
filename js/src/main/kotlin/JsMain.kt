@@ -23,7 +23,7 @@ external fun alert(message: Any?)
 
 fun startGui() {
     //usage of external libraries & external functions
-    jq("#alert_button").click {
+    jQuery("#alert_button").click {
         alert("This is the expected alert function")
     }
     //usage of standard JS
