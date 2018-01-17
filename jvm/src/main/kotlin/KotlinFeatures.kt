@@ -40,7 +40,7 @@ fun highOrderFunctionSample(operation: (Int, Int) -> Int): Int {
 
 fun Int.double() = this * 2
 fun String.congratulate() = this.plus(" congratulations!")
-fun extensionSample(param: Any?): String {
+fun extensionSample(param: Any): String {
     //smart casts
     return when (param) {
         is Int -> "Doubled number: ${param.double()}"
@@ -49,7 +49,7 @@ fun extensionSample(param: Any?): String {
     }
 }
 
-fun defaultArguments(subject: Any? = "Called without argument"): String {
+fun defaultArguments(subject: Any = "Called without argument"): String {
     return subject.toString()
 }
 
