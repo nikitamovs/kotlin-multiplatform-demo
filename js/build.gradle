@@ -12,6 +12,11 @@ buildscript {
 apply plugin: 'kotlin2js'
 apply plugin: 'kotlin-platform-js'
 
+compileKotlin2Js {
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+}
+
 repositories {
     mavenCentral()
     maven {
